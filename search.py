@@ -168,14 +168,9 @@ for arg in args:
                 "location": [],
                 "mugic": []
                 }
-        print(f"{arg}")
         for card_type in cards:
-            print(f"{card_type}")
-            print("Got here 1")
             if arg[0] in keys[card_type]:
-                print("Got here 2")
                 if arg[1] in keys[card_type][arg[0]]:
-                    print("Got here 3")
                     for card in cards[card_type]:
                         if arg[1] == '==':
                             if card[arg[0]] != arg[2]:
@@ -197,7 +192,6 @@ for arg in args:
                                 cards_to_elim[card_type].append(card)
                         elif arg[1] == '~':
                             if arg[2] not in card[arg[0]]:
-                                print(f"{arg[2]} - {card[arg[0]]}")
                                 cards_to_elim[card_type].append(card)
                         elif arg[1] == '!~':
                             if arg[2] in card[arg[0]]:
